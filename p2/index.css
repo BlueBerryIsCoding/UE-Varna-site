@@ -1,0 +1,150 @@
+body {
+    margin: 0;
+    font-family: "Roboto", serif;
+}
+
+.zaglavie{
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 36px;
+    padding-top: 250px;
+    text-shadow:rgb(0, 0, 0) 1px 1px 1px;
+    text-transform: uppercase;
+
+}
+
+
+.main-container {
+    display: flex;
+    align-items: center;    
+    justify-content:center;
+    margin-top: 200px;
+}
+
+
+.snimka-conteiner {
+    position: relative;
+
+    overflow: hidden; /*pri zoom snimkata da ne izliza ot poleto */
+
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    display: block;
+
+    transition: transform 0.2s ease; /*smooth zoom */
+
+}
+
+.cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+
+    color: rgb(251, 251, 251);
+    text-align: center;
+    opacity: 1;
+
+    
+
+}
+
+.prof .cover {
+    background-color: rgba(10, 35, 60, 0.725); 
+}
+
+.bak .cover {
+    background-color: rgba(83, 83, 11, 0.697);
+}
+
+.mag .cover {
+    background-color: rgba(161, 117, 35, 0.588);
+}
+
+.dok .cover {
+    background-color: rgba(105, 31, 31, 0.632); 
+}
+
+.cover h2 , .cover p, .cover a {
+    margin: 10px 0;
+}
+
+.learn-more {
+    color: white;
+    text-decoration: none;
+    text-shadow:rgb(0, 0, 0) 1px 1px 1px;
+
+}
+
+hr{
+    width: 70%;
+    align-self: center;
+    border: 1px solid rgb(194, 167, 132);
+    
+}
+
+ .snimka-conteiner.prof {                                   /*zoom */
+    transition: transform 0.02s ease;
+}
+
+.snimka-conteiner:hover .image {                            /*zoom */
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 1s ease;
+}
+
+.snimka-conteiner:hover .zaglavie {                         /*povdigane na main teksta*/
+    animation-name: slideToUp;
+    transition: transform 1s ease;
+}
+
+
+.text-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: transform 0.5s ease;
+    transform: translateY(0);
+    
+}
+
+.snimka-conteiner:hover .text-content {                     /* animaciq pri hover */
+
+    transform: translateY(-18%);
+}
+
+.dopulnitelen-text {
+    opacity: 0;
+    transform: translateY(40px);                             /* skrit text*/
+    transition: opacity 0.6s ease, transform 0.9s ease;
+    padding: 0px 8px;
+}
+
+.snimka-conteiner:hover .dopulnitelen-text {
+    opacity: 1;
+    transform: translateY(15px); 
+}
+
+.text-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: transform 0.5s ease;
+    transform: translateY(0);
+}
+
+.snimka-conteiner:hover .text-content {
+    transform: translateY(-20%);                            /* osnoven tekst*/
+}
